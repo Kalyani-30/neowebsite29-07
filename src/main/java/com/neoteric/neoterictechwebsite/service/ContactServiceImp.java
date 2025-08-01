@@ -41,7 +41,7 @@ public class ContactServiceImp implements ContactService {
 
         sendCompanyEmail(dto);
         sendUserConfirmation(dto);
-        return new ResponseEntity<>("saved sucessfully",HttpStatus.OK);
+        return new ResponseEntity<>("Contact information received successfully.",HttpStatus.OK);
     }
 
     private void sendCompanyEmail(ContactFormDto dto) {
@@ -73,7 +73,7 @@ public class ContactServiceImp implements ContactService {
             helper.setSubject("Thank you for contacting us");
             helper.setText(
                     "<h2>Hi " + dto.getFirstName() + ",</h2>" +
-                            "<p> Thank you for reaching out to <strong>Neoteric Technologies</strong>! We're thrilled to hear from you. Your message has been received,One of our team members will connect with you shortly. Until then, feel free to explore more about us on our website or follow us on social media!</p>" +
+                            "<p> Thank you for reaching out to <strong>Neoteric Technologies</strong>! One of our team members will connect with you shortly. Until then, feel free to explore more about us on our website</p>" +
                             "<p>Warm regards,<br><strong>Neoteric Technologies inc Pvt Ltd</strong></p>" ,true
             );
 
